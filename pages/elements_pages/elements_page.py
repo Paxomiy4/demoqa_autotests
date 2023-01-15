@@ -13,3 +13,11 @@ class ElementsPage(BasePage):
     def should_be_elements_header(self):
         elements_header = self.browser.find_element(*ElementsPageLocators.HEADER)
         assert elements_header.text == "Elements", "Elements header not present"
+
+    def go_to_text_box_page(self):
+        button = self.browser.find_element(*ElementsPageLocators.TEXT_BOX)
+        button.click()
+
+    def go_to_check_box_page(self):
+        button = self.browser.find_element(*ElementsPageLocators.CHECK_BOX)
+        button.click()
