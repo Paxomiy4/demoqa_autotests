@@ -4,6 +4,7 @@ from ..pages.elements_pages.check_box_page import CheckBoxPage
 from ..pages.elements_pages.radio_button_page import RadioButtonPage
 from ..pages.elements_pages.web_tables_page import WebTablesPage
 from ..pages.elements_pages.buttons_page import ButtonsPage
+from ..pages.elements_pages.links_page import LinksPage
 
 LINK = "https://demoqa.com/elements"
 
@@ -48,3 +49,9 @@ def test_go_to_buttons_page(browser):
     buttons_page.should_be_buttons_page()
 
 
+def test_go_to_links_page(browser):
+    page = ElementsPage(browser, LINK)
+    page.open()
+    page.go_to_links_page()
+    links_page = LinksPage(browser, browser.current_url)
+    links_page.should_be_links_page()
