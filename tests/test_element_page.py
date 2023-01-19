@@ -3,6 +3,7 @@ from ..pages.elements_pages.text_box_page import TextBoxPage
 from ..pages.elements_pages.check_box_page import CheckBoxPage
 from ..pages.elements_pages.radio_button_page import RadioButtonPage
 from ..pages.elements_pages.web_tables_page import WebTablesPage
+from ..pages.elements_pages.buttons_page import ButtonsPage
 
 LINK = "https://demoqa.com/elements"
 
@@ -37,4 +38,13 @@ def test_go_to_web_tables_page(browser):
     page.go_to_web_tables_page()
     web_tables_page = WebTablesPage(browser, browser.current_url)
     web_tables_page.should_be_web_tables_page()
+
+
+def test_go_to_buttons_page(browser):
+    page = ElementsPage(browser, LINK)
+    page.open()
+    page.go_to_buttons_page()
+    buttons_page = ButtonsPage(browser, browser.current_url)
+    buttons_page.should_be_buttons_page()
+
 
