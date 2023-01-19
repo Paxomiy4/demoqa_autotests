@@ -5,6 +5,7 @@ from ..pages.elements_pages.radio_button_page import RadioButtonPage
 from ..pages.elements_pages.web_tables_page import WebTablesPage
 from ..pages.elements_pages.buttons_page import ButtonsPage
 from ..pages.elements_pages.links_page import LinksPage
+from ..pages.elements_pages.images_page import ImagesPage
 
 LINK = "https://demoqa.com/elements"
 
@@ -55,3 +56,11 @@ def test_go_to_links_page(browser):
     page.go_to_links_page()
     links_page = LinksPage(browser, browser.current_url)
     links_page.should_be_links_page()
+
+
+def test_go_to_images_page(browser):
+    page = ElementsPage(browser, LINK)
+    page.open()
+    page.go_to_images_page()
+    images_page = ImagesPage(browser, browser.current_url)
+    images_page.should_be_images_page()
